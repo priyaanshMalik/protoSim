@@ -1,0 +1,32 @@
+:root {
+    --light: #fff;
+    --light-text:#000;
+    --light-container:#f3f3f3;
+    --dark: #212529;
+    --dark-text: #fff;
+    --dark-container: #1b1f22;
+    --blue: #0d6efd;
+    --blue-emphasis: #064eb9;
+    --blue-secondary: #0d6dfd7a;
+    --violet: #712cf9;
+    --violet-emphasis: rgba(84,33,187, .5);
+    --violet-secondary: #804ce7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 97vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--light);
+    color: var(--dark);
+    font-family: Arial, sans-serif;
+    font-size: 1.15rem;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
