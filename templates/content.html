@@ -1,0 +1,133 @@
+{% extends 'theme.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="the_section">
+        <div class="header">
+            <h2>Select Protocol</h2>
+        </div>
+        <div class="data_fields">
+            <div class="switch-field">
+                <input type="radio" id="tcp_btn" name="protocols" value="tcp" />
+                <label for="tcp_btn">TCP</label>
+                <input type="radio" id="udp_btn" name="protocols" value="udp" />
+                <label for="udp_btn">UDP</label>
+                <input type="radio" id="rs422_btn" name="protocols" value="rs422" />
+                <label for="rs422_btn">RS422</label>
+            </div>
+            <div class="form_container">
+                <div class="panel">
+                    <div id="tcp_info">
+                        <div class="info_fill">
+                            <label for="ip_address">IP Address</label>
+                            <div>
+                                <input type="text" name="ip_address" id="ip_tcp" placeholder="127.0.0.1">
+                                <span class="ip_alert">Enter valid IP Address</span>
+                            </div>
+                        </div>
+                        <div class="info_fill">
+                            <label for="port">Port Number</label>
+                            <div>
+                                <input type="number" name="port" id="port_tcp" placeholder="80">
+                                <span class="port_alert">Enter valid Port number</span>
+                            </div>
+
+                        </div>
+                        <div class="info_fill">
+                            <button class="start_btn" id="tcp_start">Start TCP</button>
+                            <h5>
+                                Connection status:
+                                <span id="status">Disconnected</span>
+                            </h5>
+                        </div>
+
+                    </div>
+                    <div id="udp_info">
+                        <div class="info_fill">
+                            <label for="ip_address">IP Address</label>
+                            <div>
+                                <input type="text" name="ip_address" id="ip_udp" placeholder="127.0.0.1">
+                                <span class="ip_alert">Enter valid IP Address</span>
+                            </div>
+                        </div>
+                        <div class="info_fill">
+                            <label for="port">Port Number</label>
+                            <div>
+                                <input type="number" name="port" id="port_udp" placeholder="80">
+                                <span class="port_alert">Enter valid Port number</span>
+                            </div>
+                        </div>
+                        <div class="info_fill">
+                            <button class="start_btn">Start UDP</button>
+                        </div>
+                    </div>
+                    <div id="rs422_info">
+                        <div class="info_fill">
+                            <label for="ID">ID</label>
+                            <div>
+                                <input type="text" name="ID" id="i_d" placeholder="">
+                            </div>
+                        </div>
+                        <div class="info_fill">
+                            <label for="channel_number">channel_number</label>
+                            <div>
+                                <input type="number" name="channel_number" id="channel_number" placeholder="1">
+                            </div>
+                        </div>
+                        <div class="info_fill">
+                            <label for="baude_rate">baude_rate</label>
+                            <div>
+                                <input type="number" name="baude_rate" id="baude_rate" placeholder="1">
+                            </div>
+                        </div>
+                        <div class="info_fill">
+                            <label for="parity">parity</label>
+                            <div>
+                                <input type="number" name="parity" id="parity" placeholder="1">
+                            </div>
+                        </div>
+                        <div class="info_fill">
+                            <label for="stop_bit">stop_bit</label>
+                            <div>
+                                <input type="number" name="stop_bit" id="stop_bit" placeholder="1">
+                            </div>
+                        </div>
+                        <div class="info_fill">
+                            <label for="delay">delay</label>
+                            <div>
+                                <input type="number" name="delay" id="delay" placeholder="1">
+                            </div>
+                        </div>
+                        <div class="info_fill">
+                            <button class="start_btn">Start RS422</button>
+                        </div>
+                    </div>
+                </div>
+                <script src="static/scripts/form.js"></script>
+            </div>
+
+
+        </div>
+        <div class="content">
+            <div class="chat-room-widget">
+                <div class="chatScrollContainer">
+                    <div class="msgs-container">
+                        <ul id="messages"></ul>
+                    </div>
+
+                    <div class="message-box">
+                        <input type="text" placeholder="Enter your message" id="message-input" name="message" />
+                        <button id="sender" class="btn-send">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+
+</div>
+<script src="static/scripts/socketio-client.js"></script>
+<script src="static/scripts/socketScript.js"></script>
+{% endblock %}
